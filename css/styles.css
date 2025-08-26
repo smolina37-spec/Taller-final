@@ -1,0 +1,401 @@
+/*
+    Estilos CSS para la página de registro de Achury Abogados S.A.S.
+    Este archivo utiliza Flexbox y CSS Grid para la maquetación.
+    Se aplican variables CSS para la consistencia en los colores y se incluyen
+    estados de hover para una mejor experiencia de usuario.
+*/
+
+/*
+    Definición de variables CSS para la paleta de colores.
+    Esto permite una gestión centralizada y facilita futuros cambios de marca.
+*/
+:root {
+    --color-background-main: #ffffff;     /* Fondo principal en blanco */
+    --color-background-dark: #ffffff;     /* Fondo de toda la página */
+    --color-text-light: #000000;          /* Texto oscuro sobre fondo blanco */
+    --color-text-muted: #6c757d;          /* Texto secundario gris */
+    --color-accent: #6d0111;              /* Color secundario (vino oscuro) */
+    --color-accent-dark: #4a000c;         /* Versión más oscura para hover */
+}
+
+/*
+    Estilos globales para el body y reseteo de márgenes
+*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--color-background-dark);
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+/*
+    Contenedor principal para centrar y limitar el ancho del contenido.
+*/
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/*
+    HEADER: Estilos para la barra de navegación superior.
+    Utiliza Flexbox para una alineación y distribución horizontal eficiente.
+*/
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+}
+
+.logo img {
+    height: 30px;
+}
+
+/*
+    NAV: Estilos para la lista de enlaces de navegación.
+    Flexbox se usa aquí para la alineación horizontal de los ítems del menú.
+*/
+.main-nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--color-text-light);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--color-accent);
+}
+
+/*
+    Estilos genéricos para botones.
+*/
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 1px solid transparent;
+}
+
+/* Estilos específicos para el botón "Registrarse" del header */
+.btn-register {
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+}
+
+.btn-register:hover {
+    background-color: var(--color-accent-dark);
+}
+
+/*
+    SECCIÓN BENEFICIOS en 2 columnas
+*/
+.benefits-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* texto - imagen */
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+/* Contenedor de texto */
+.benefits-text-container {
+    padding: 2rem;
+}
+
+/* Contenedor de la imagen */
+.image-container {
+    padding: 2rem;
+}
+
+.section-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0.5rem;
+    object-fit: cover;
+}
+
+/*
+    Títulos y textos de secciones
+*/
+.section-label {
+    color: var(--color-text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.section-description {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    margin-bottom: 2rem;
+}
+
+/*
+    CSS GRID para la cuadrícula de beneficios 3x2
+*/
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.benefit-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+}
+
+.benefit-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-light);
+}
+
+.benefit-description {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+/*
+    Sección de información de contacto.
+*/
+.contact-info {
+    font-style: normal;
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    color: var(--color-accent);
+}
+
+.contact-text {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-text:hover {
+    color: var(--color-text-light);
+}
+
+/*
+    Botón de llamada a la acción final.
+*/
+.btn-cta {
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-cta:hover {
+    background-color: var(--color-accent-dark);
+}
+
+/* Buscador */
+.search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-form input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex: 1;
+}
+
+.search-form .btn {
+    padding: 8px 16px;
+    background-color: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Paginación */
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+.pagination .btn {
+    padding: 6px 12px;
+    background-color: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pagination .btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/*
+    SECCIÓN PERSONAJES DE RICK AND MORTY
+*/
+.characters-section {
+    text-align: center;
+    margin: 3rem auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+}
+
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.character-card {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.character-card:hover {
+    transform: scale(1.05);
+}
+
+.character-image {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.character-name {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.character-status {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/*
+    Clase para elementos ocultos accesibles solo para lectores de pantalla.
+*/
+.sr-only {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/*
+    Media Queries para el diseño responsivo.
+*/
+@media (max-width: 900px) {
+   .main-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+   .main-nav {
+        margin: 1rem 0;
+    }
+
+   .benefits-section {
+        grid-template-columns: 1fr;
+    }
+
+   .benefits-text-container,
+   .image-container {
+        padding: 1rem 0;
+    }
+
+   .benefits-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+   .section-image {
+        display: none;
+    }
+
+   .image-container {
+        order: 2;
+    }
+
+   .benefits-text-container {
+        order: 1;
+    }
+}
+
+@media (max-width: 600px) {
+   .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+   .btn-cta {
+        padding: 0.75rem 1.5rem;
+    }
+}
